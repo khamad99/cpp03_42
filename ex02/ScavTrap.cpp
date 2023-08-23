@@ -6,15 +6,18 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 09:21:14 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/08/15 09:45:55 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/08/23 12:07:50 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "ScavTrap Default constructor called" << std::endl;
+    this->_hitPoints = 100;
+    this->_energyPoints = 50;
+    this->_attackDamage = 20;
 }
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
@@ -25,7 +28,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
     this->_attackDamage = 20;
 }
 
-ScavTrap::ScavTrap(ScavTrap const & src)
+ScavTrap::ScavTrap(ScavTrap const & src) : ClapTrap(src)
 {
     std::cout << "ScavTrap Copy constructor called" << std::endl;
     *this = src;
@@ -64,4 +67,3 @@ void ScavTrap::guardGate()
 {
     std::cout << "ScavTrap " << this->_name << " has entered in Gate keeper mode" << std::endl;
 }
-

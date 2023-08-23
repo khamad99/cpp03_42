@@ -6,13 +6,13 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 08:56:43 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/08/15 09:47:09 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/08/23 11:50:37 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap()
+ClapTrap::ClapTrap() : _name("Default"), _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     std::cout << "ClapTrap Default constructor called" << std::endl;
 }
@@ -48,7 +48,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & src)
 
 void ClapTrap::attack(std::string const & target)
 {
-    if (this->_energyPoints == 0)
+    if (this->_energyPoints <= 0)
     {
         std::cout << "ClapTrap " << this->_name << " has no energy points!" << std::endl;
         return ;
@@ -70,7 +70,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-    if (_energyPoints <= amount)
+    if (_energyPoints <= 0)
     {
         std::cout << "ClapTrap " << this->_name << " has no energy points!" << std::endl;
         return ;
