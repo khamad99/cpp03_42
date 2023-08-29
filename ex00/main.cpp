@@ -6,7 +6,7 @@
 /*   By: kalshaer <kalshaer@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/15 09:03:13 by kalshaer          #+#    #+#             */
-/*   Updated: 2023/08/23 11:53:14 by kalshaer         ###   ########.fr       */
+/*   Updated: 2023/08/29 10:38:45 by kalshaer         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int main()
     clap4.attack("Enemy2");
     clap4.attack("Enemy2");
     clap4.attack("Enemy2");
+    clap4.takeDamage(5);
+    clap4.takeDamage(5);
     clap4.takeDamage(5);
     clap4.beRepaired(5);
 
